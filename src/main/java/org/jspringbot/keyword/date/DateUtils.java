@@ -86,6 +86,19 @@ public class DateUtils {
         return format(getHelper().getCurrent(), "current", args);
     }
 
+    public static int currentMonth() {
+        return getHelper().getCurrent().getMonthOfYear();
+    }
+
+    public static int currentDayOfMonth() {
+
+        return getHelper().getCurrent().getDayOfMonth();
+    }
+
+    public static int currentYear() {
+        return getHelper().getCurrent().getYear();
+    }
+
     public static String midnight(String... args) {
         return format(new DateMidnight(), "midnight", args);
     }

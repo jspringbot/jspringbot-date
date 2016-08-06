@@ -107,7 +107,6 @@
     <dependency>
       <groupId>org.jspringbot</groupId>
       <artifactId>jspringbot-expression</artifactId>
-      <version>1.4</version>
     </dependency>
     <dependency>
       <groupId>junit</groupId>

@@ -16,6 +16,27 @@
     <function-signature>java.lang.String current(java.lang.String[])</function-signature>
   </function>
   <function>
+    <name>currentMonth</name>
+    <prefix>date</prefix>
+    <description>Returns the current month.</description>
+    <function-class>org.jspringbot.keyword.date.DateUtils</function-class>
+    <function-signature>int currentMonth()</function-signature>
+  </function>
+  <function>
+    <name>currentDayOfMonth</name>
+    <prefix>date</prefix>
+    <description>Returns the current date of month.</description>
+    <function-class>org.jspringbot.keyword.date.DateUtils</function-class>
+    <function-signature>int currentDayOfMonth()</function-signature>
+  </function>
+  <function>
+    <name>currentYear</name>
+    <prefix>date</prefix>
+    <description>Returns the current year.</description>
+    <function-class>org.jspringbot.keyword.date.DateUtils</function-class>
+    <function-signature>int currentYear()</function-signature>
+  </function>
+  <function>
     <name>reformat</name>
     <prefix>date</prefix>
     <description>Returns the re-formatted date string.</description>

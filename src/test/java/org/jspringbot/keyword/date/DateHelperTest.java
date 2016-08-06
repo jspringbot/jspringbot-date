@@ -76,6 +76,10 @@ public class DateHelperTest {
         System.out.println(expressionHelper.evaluate("$[date:lastDayOfMonth()]"));
         System.out.println(expressionHelper.evaluate("$[date:firstDayOfYear()]"));
 
+        System.out.println(expressionHelper.evaluate("$[date:current()]"));
+        System.out.println(expressionHelper.evaluate("$[date:currentMonth()]"));
+        System.out.println(expressionHelper.evaluate("$[date:currentYear()]"));
+        System.out.println(expressionHelper.evaluate("$[date:currentDayOfMonth()]"));
     }
 
     @Test
