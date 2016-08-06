@@ -226,6 +226,98 @@ public class DateUtils {
         throw new IllegalArgumentException(String.format("Expected invocation %s() or %s(format) or %s(amend_date, format) or %s(amend_date).", method, method, method, method));
     }
 
+    public static DateTime amend(BaseDateTime dt, String... args) {
+        DateTime dateTime = dt.toDateTime();
+
+
+        if (args == null || args.length == 0) {
+            return dateTime;
+        }
+
+        Matcher matcher = AMEND_DATE_PATTERN.matcher(args[0]);
+
+
+        boolean firstArgAmend = false;
+        int startIndex = 0;
+        while (matcher.find(startIndex)) {
+            firstArgAmend = true;
+            char operator = matcher.group(1).charAt(0);
+            int amount = Integer.parseInt(matcher.group(2));
+            char time = matcher.group(3).charAt(0);
+
+            switch (time) {
+                case 'y':
+                case 'Y':
+                    switch (operator) {
+                        case '+':
+                            dateTime = dateTime.plusYears(amount);
+                            break;
+                        case '-':
+                            dateTime = dateTime.minusYears(amount);
+                            break;
+                    }
+                    break;
+                case 'M':
+                    switch (operator) {
+                        case '+':
+                            dateTime = dateTime.plusMonths(amount);
+                            break;
+                        case '-':
+                            dateTime = dateTime.minusMonths(amount);
+                            break;
+                    }
+                    break;
+                case 'D':
+                case 'd':
+                    switch (operator) {
+                        case '+':
+                            dateTime = dateTime.plusDays(amount);
+                            break;
+                        case '-':
+                            dateTime = dateTime.minusDays(amount);
+                            break;
+                    }
+                    break;
+                case 'H':
+                case 'h':
+                    switch (operator) {
+                        case '+':
+                            dateTime = dateTime.plusHours(amount);
+                            break;
+                        case '-':
+                            dateTime = dateTime.minusHours(amount);
+                            break;
+                    }
+                    break;
+                case 'm':
+                    switch (operator) {
+                        case '+':
+                            dateTime = dateTime.plusMinutes(amount);
+                            break;
+                        case '-':
+                            dateTime = dateTime.minusMinutes(amount);
+                            break;
+                    }
+                    break;
+                case 's':
+                case 'S':
+                    switch (operator) {
+                        case '+':
+                            dateTime = dateTime.plusSeconds(amount);
+                            break;
+                        case '-':
+                            dateTime = dateTime.minusSeconds(amount);
+                            break;
+                    }
+                    break;
+            }
+
+            startIndex = matcher.end();
+        }
+
+        return dateTime;
+    }
+
     private static String format(DateTime dateTime) {
         return format(dateTime, getHelper().getFormatterPattern());
     }

@@ -80,6 +80,10 @@ public class DateHelperTest {
         System.out.println(expressionHelper.evaluate("$[date:currentMonth()]"));
         System.out.println(expressionHelper.evaluate("$[date:currentYear()]"));
         System.out.println(expressionHelper.evaluate("$[date:currentDayOfMonth()]"));
+
+        expressionHelper.evaluate("$[date:parse('2016-01-01', 'yyyy-MM-dd')]");
+        helper.amendDate("-18y -1d");
+        System.out.println(helper.getCurrent());
     }
 
     @Test

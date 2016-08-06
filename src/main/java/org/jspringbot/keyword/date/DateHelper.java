@@ -168,6 +168,9 @@ public class DateHelper {
     	    	
     }
 
+    public void amendDate(String amend) {
+        current = DateUtils.amend(current, amend);
+    }
 
     public String formatDateTime() {
         return formatDateTime(formatterPattern);

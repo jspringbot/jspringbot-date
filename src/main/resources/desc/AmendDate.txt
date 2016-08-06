@@ -1,0 +1,6 @@
+Amends current date stored
+
+Example:
+| Amend Date | -18y -1d | Subtracts 18 years and 1 day
+| Amend Date | -1M | Subtracts 1 month
+| Amend Date | -60m | Subtracts 60 minutes
