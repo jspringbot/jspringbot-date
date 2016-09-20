@@ -87,6 +87,18 @@ public class DateHelperTest {
     }
 
     @Test
+    public void testCurrentTimeMillis() throws Exception {
+        System.out.println(expressionHelper.evaluate("$[date:currentTimeMillis()]"));
+    }
+
+    @Test
+    public void testAmendDate() throws Exception {
+        expressionHelper.evaluate("$[date:parse('2016-01-01', 'yyyy-MM-dd')]");
+        helper.amendDate("-18y -1d");
+        System.out.println(helper.getCurrent());
+    }
+
+    @Test
     public void testParseDate() throws Exception {
         System.out.println(expressionHelper.evaluate("$[date:changeISODateFormat('2013-03-18T15:39:43.000+08:00','yyyy-MM-dd HH:mm:ss')]"));
     }

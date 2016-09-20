@@ -2,6 +2,13 @@
 
 <functions>
   <function>
+    <name>currentTimeMillis</name>
+    <prefix>date</prefix>
+    <description>Returns the current time in millis.</description>
+    <function-class>org.jspringbot.keyword.date.DateUtils</function-class>
+    <function-signature>long currentTimeMillis()</function-signature>
+  </function>
+  <function>
     <name>now</name>
     <prefix>date</prefix>
     <description>Returns the date now.</description>

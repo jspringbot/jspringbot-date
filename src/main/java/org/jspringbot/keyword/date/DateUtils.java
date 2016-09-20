@@ -60,6 +60,10 @@ public class DateUtils {
         return getHelper().getSQLTimestamp();
     }
 
+    public static long currentTimeMillis() {
+        return System.currentTimeMillis();
+    }
+
     public static String isoParse(String dateString) {
         return getHelper().isoParseDateTime(dateString);
     }
