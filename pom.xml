@@ -25,11 +25,11 @@
   <parent>
     <groupId>org.jspringbot</groupId>
     <artifactId>jspringbot-libraries</artifactId>
-    <version>1.5</version>
+    <version>1.6-SNAPSHOT</version>
   </parent>
 
   <artifactId>jspringbot-date</artifactId>
-  <version>1.5-SNAPSHOT</version>
+  <version>1.6-SNAPSHOT</version>
   <name>jspringbot-date</name>
 
   <build>
@@ -70,6 +70,7 @@
     <connection>scm:git:https://github.com/jspringbot/jspringbot-date.git</connection>
     <url>scm:git:https://github.com/jspringbot/jspringbot-date.git</url>
     <developerConnection>scm:git:https://github.com/jspringbot/jspringbot-date.git</developerConnection>
+    <tag>HEAD</tag>
   </scm>
 
   <developers>
