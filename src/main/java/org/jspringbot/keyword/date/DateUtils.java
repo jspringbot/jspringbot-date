@@ -22,7 +22,7 @@ import java.util.regex.Pattern;
 public class DateUtils {
     public static final HighlightRobotLogger LOG = HighlightRobotLogger.getLogger(DateUtils.class);
 
-    private static final Pattern AMEND_DATE_PATTERN = Pattern.compile("([\\+\\-])([0-9]+)([mdDMyYSshH])");
+    private static final Pattern AMEND_DATE_PATTERN = Pattern.compile("([\\+\\-])([0-9]+)([mdDMyYSshHrR])");
 
     private static DateHelper getHelper() {
         return ApplicationContextHolder.get().getBean(DateHelper.class);
@@ -187,6 +187,13 @@ public class DateUtils {
                         case '-': dateTime = dateTime.minusMonths(amount); break;
                     }
                     break;
+                case 'R':
+                case 'r':
+                    switch (operator) {
+                        case '+': dateTime = dateTime.plusDays(random(0, amount)); break;
+                        case '-': dateTime = dateTime.minusDays(random(0, amount)); break;
+                    }
+                    break;
                 case 'D':
                 case 'd':
                     switch (operator) {
@@ -271,6 +278,17 @@ public class DateUtils {
                             break;
                     }
                     break;
+                case 'R':
+                case 'r':
+                    switch (operator) {
+                        case '+':
+                            dateTime = dateTime.plusDays(random(0, amount));
+                            break;
+                        case '-':
+                            dateTime = dateTime.minusDays(random(0, amount));
+                            break;
+                    }
+                    break;
                 case 'D':
                 case 'd':
                     switch (operator) {
@@ -320,6 +338,10 @@ public class DateUtils {
         }
 
         return dateTime;
+    }
+
+    private static int random(int min, int max) {
+        return min + (int)(Math.random() * ((max - min) + 1));
     }
 
     private static String format(DateTime dateTime) {

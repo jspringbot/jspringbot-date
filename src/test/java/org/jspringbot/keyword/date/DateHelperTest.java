@@ -87,6 +87,16 @@ public class DateHelperTest {
     }
 
     @Test
+    public void randomDate() throws Exception {
+
+        // Random 3 days
+
+        System.out.println(expressionHelper.evaluate("$[date:current('-12M +180r')]"));
+        System.out.println(expressionHelper.evaluate("$[date:current('-6M +180r')]"));
+
+    }
+
+    @Test
     public void testCurrentTimeMillis() throws Exception {
         System.out.println(expressionHelper.evaluate("$[date:currentTimeMillis()]"));
     }
