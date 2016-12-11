@@ -94,6 +94,8 @@ public class DateHelperTest {
         System.out.println(expressionHelper.evaluate("$[date:current('-12M +180r')]"));
         System.out.println(expressionHelper.evaluate("$[date:current('-6M +180r')]"));
 
+        System.out.println(expressionHelper.evaluate("$[date:now('-12M +180r')]"));
+        System.out.println(expressionHelper.evaluate("$[date:now('-6M +180r')]"));
     }
 
     @Test
